@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="800.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <ListView fx:id="toDo" layoutX="14.0" layoutY="150.0" prefHeight="300.0" prefWidth="200.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="DeleteNewTask" mnemonicParsing="false" text="delete" />
+                      <MenuItem fx:id="EditNewTask" mnemonicParsing="false" text="edit" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+            <ListView fx:id="inProgress" layoutX="300.0" layoutY="150.0" prefHeight="300.0" prefWidth="200.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="EditProgressTask" mnemonicParsing="false" text="edit" />
+                        <MenuItem fx:id="DeleteProgressTask" mnemonicParsing="false" text="delete" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+            <ListView fx:id="doneTasks" layoutX="588.0" layoutY="150.0" prefHeight="300.0" prefWidth="200.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="EditDoneTask" mnemonicParsing="false" text="edit" />
+                        <MenuItem fx:id="DeleteDoneTask" mnemonicParsing="false" text="delete" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></ListView>
+            <Button fx:id="addTask" layoutX="300.0" layoutY="497.0" mnemonicParsing="false" onAction="#addNewTask" prefHeight="25.0" prefWidth="200.0" text="Add new task" textOverrun="WORD_ELLIPSIS" />
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="CloseClick" mnemonicParsing="false" text="Close" />
+                        <MenuItem fx:id="SaveButton" mnemonicParsing="false" onAction="#saveState" text="Save" />
+                        <MenuItem fx:id="loadButton" mnemonicParsing="false" onAction="#loadState" text="Load" />
+                        <MenuItem fx:id="exportButton" mnemonicParsing="false" onAction="#exportData" text="Export" />
+                        <MenuItem fx:id="importButton" mnemonicParsing="false" onAction="#importData" text="Import" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="About">
+                  <items>
+                    <MenuItem fx:id="AboutApp" mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label alignment="TOP_CENTER" layoutX="14.0" layoutY="128.0" prefHeight="22.0" prefWidth="200.0" text="Tasks">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="300.0" layoutY="128.0" prefHeight="15.0" prefWidth="200.0" text="In Progress">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="588.0" layoutY="128.0" prefHeight="22.0" prefWidth="200.0" text="Done">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</GridPane>
